@@ -1,0 +1,40 @@
+{
+    "articles" : [
+        {
+        "id": 1,
+        "image_url": "https://t0.gstatic.com/images?q=tbn%3AANd9GcSB4VC0pqHL_sKPOJU97w0maPoT_4bOsecK3z3-HpPR6z987Z5KoMgYUDzI1pCkM4zqTEI2W_iu&usqp=CAc",
+        "name": "Paire de chaussure",
+        "price": 20,
+        "category": "Mode",
+        "location": "Nanterre 92000",
+        "upload_date": "Aujourd'hui, 15h30"
+        },
+        {
+            "id": 2,
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTrxpB5xXihji6jJBgBmkGjQal4j0dCyYaQmWsrsjTXEs-fUvB9",
+            "name": "Vélo",
+            "price": 130,
+            "category": "Sport / loisir",
+            "location": "Créteil 94000",
+            "upload_date": "27/02/2020, 18h45"
+        },
+        {
+            "id": 3,
+            "image_url": "https://cdn.shopify.com/s/files/1/1752/3815/products/La_montre_Madnesscuff_-_La_magnifique_d784a47b-e1cc-426c-951e-f8480c0b4d06_600x.jpg?v=1554218482",
+            "name": "Montre",
+            "price": 300,
+            "category": "Bijoux",
+            "location": "Paris 75014",
+            "upload_date": "27/02/2020, 11h00"
+        },
+        {
+            "id": 4,
+            "image_url": "https://static.actu.fr/uploads/2018/06/cochondInde-854x569.jpg",
+            "name": "Cochon d'Inde",
+            "price": 50,
+            "category": "Animaux",
+            "location": "Paris 75017",
+            "upload_date": "26/02/2020, 16h15"
+        }
+    ]
+}
