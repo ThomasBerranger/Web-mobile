@@ -1,3 +1,21 @@
 body {
   background-color: #fafafa;
 }
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #f56b2a;
+}
+
+svg g path {
+  fill: #3d6abe;
+  stroke: #223c85;
+  stroke-width: 2px;
+}
+
+path:hover {
+  fill: #f56b2a;
+}

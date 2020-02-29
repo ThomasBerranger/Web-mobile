@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Header from '../header'
 import data from '../json/articles.json'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-regular-svg-icons'
 
@@ -10,9 +12,10 @@ const articles = data['articles']
 const Article = () => {
   return (
     <div>
+      <Header></Header>
       <LocationStyled>Annonces : Ile-de-France</LocationStyled>
       {articles.map(article => (
-        <ArticleStyled key=''>
+        <ArticleStyled key={article.id}>
           <ImageStyled
             src={article.image_url ? article.image_url : ''}
           ></ImageStyled>
@@ -33,7 +36,7 @@ const Article = () => {
 }
 
 const LocationStyled = styled.h3`
-  margin: 5% 5%;
+  margin: 25% 5% 5% 5%;
   font-weight: 600;
 `
 
@@ -42,6 +45,7 @@ const ArticleStyled = styled.div`
   display: flex;
   background-color: #ffffff;
   border-radius: 5px;
+  box-shadow: 1px 1px 8px 1px #e6ebef;
 `
 
 const LikeStyled = styled.div`

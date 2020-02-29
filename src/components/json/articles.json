@@ -3,7 +3,7 @@
         {
         "id": 1,
         "image_url": "https://t0.gstatic.com/images?q=tbn%3AANd9GcSB4VC0pqHL_sKPOJU97w0maPoT_4bOsecK3z3-HpPR6z987Z5KoMgYUDzI1pCkM4zqTEI2W_iu&usqp=CAc",
-        "name": "Paire de chaussure",
+        "name": "Paire de chaussures",
         "price": 20,
         "category": "Mode",
         "location": "Nanterre 92000",
@@ -35,6 +35,15 @@
             "category": "Animaux",
             "location": "Paris 75017",
             "upload_date": "26/02/2020, 16h15"
+        },
+        {
+            "id": 5,
+            "image_url": "https://img4.leboncoin.fr/ad-large/3e0b659561f7f8c5f0e15f540aa87643cf601bcf.jpg",
+            "name": "Lampe",
+            "price": 80,
+            "category": "Décoration",
+            "location": "Paris 75010",
+            "upload_date": "26/02/2020, 10h00"
         }
     ]
 }
