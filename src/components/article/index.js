@@ -7,13 +7,16 @@ import data from '../json/articles.json'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-regular-svg-icons'
 
+import { useParams } from 'react-router-dom'
+
 const articles = data['articles']
 
 const Article = () => {
+  const articleId = useParams()
   return (
     <div>
       <Header></Header>
-      <LocationStyled>Annonces : Ile-de-France</LocationStyled>
+      <LocationStyled>Annonces : {articleId['region']}</LocationStyled>
       {articles.map(article => (
         <ArticleStyled key={article.id}>
           <ImageStyled
