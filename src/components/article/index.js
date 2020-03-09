@@ -2,12 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Header from '../header'
+import OfflinePage from '../offline'
 import data from '../json/articles.json'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-regular-svg-icons'
 
 import { useParams } from 'react-router-dom'
+import { Offline, Online } from 'react-detect-offline'
 
 const articles = data['articles']
 
@@ -16,24 +18,29 @@ const Article = () => {
   return (
     <div>
       <Header></Header>
-      <LocationStyled>Annonces : {articleId['region']}</LocationStyled>
-      {articles.map(article => (
-        <ArticleStyled key={article.id}>
-          <ImageStyled
-            src={article.image_url ? article.image_url : ''}
-          ></ImageStyled>
-          <InformartionStyled>
-            <LikeStyled>
-              <FontAwesomeIcon icon={faHeart} />
-            </LikeStyled>
-            <TitleStyled>{article.name}</TitleStyled>
-            <PriceStyled>{article.price} €</PriceStyled>
-            <DescriptionStyled>{article.category}</DescriptionStyled>
-            <DescriptionStyled>{article.location}</DescriptionStyled>
-            <DescriptionStyled>{article.upload_date}</DescriptionStyled>
-          </InformartionStyled>
-        </ArticleStyled>
-      ))}
+      <Offline>
+        <OfflinePage></OfflinePage>
+      </Offline>
+      <Online>
+        <LocationStyled>Annonces : {articleId['region']}</LocationStyled>
+        {articles.map(article => (
+          <ArticleStyled key={article.id}>
+            <ImageStyled
+              src={article.image_url ? article.image_url : ''}
+            ></ImageStyled>
+            <InformartionStyled>
+              <LikeStyled>
+                <FontAwesomeIcon icon={faHeart} />
+              </LikeStyled>
+              <TitleStyled>{article.name}</TitleStyled>
+              <PriceStyled>{article.price} €</PriceStyled>
+              <DescriptionStyled>{article.category}</DescriptionStyled>
+              <DescriptionStyled>{article.location}</DescriptionStyled>
+              <DescriptionStyled>{article.upload_date}</DescriptionStyled>
+            </InformartionStyled>
+          </ArticleStyled>
+        ))}
+      </Online>
     </div>
   )
 }

@@ -19,3 +19,7 @@ svg g path {
 path:hover {
   fill: #f56b2a;
 }
+
+*:focus {
+  outline: none;
+}
