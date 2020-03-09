@@ -3,24 +3,27 @@ import styled from 'styled-components'
 import { useForm } from 'react-hook-form'
 import Header from '../header'
 
+let articleNumber = Object.keys(localStorage).length
+
 const NewArticle = () => {
   const { handleSubmit, register, errors } = useForm()
   const onSubmit = values => {
-    console.log(values)
-    localStorage.setItem(`${values.name}`, values)
+    localStorage.setItem(articleNumber, JSON.stringify(values))
+    articleNumber++
   }
 
   return (
     <div>
       <Header></Header>
       <FormStyled onSubmit={handleSubmit(onSubmit)}>
+        <InputStyled name='id' type='hidden' value={articleNumber} />
+
         <InputStyled
           name='name'
           ref={register({
             required: 'Required'
           })}
         />
-        {errors.email && errors.email.message}
 
         <InputStyled
           name='price'
@@ -28,7 +31,23 @@ const NewArticle = () => {
             required: 'Required'
           })}
         />
-        {errors.username && errors.username.message}
+
+        <InputStyled name='image_url' ref={register({})} />
+
+        <InputStyled name='category' placeholder='Jeux' ref={register({})} />
+
+        <InputStyled
+          name='location'
+          placeholder='Paris 75000'
+          ref={register({})}
+        />
+
+        <InputStyled
+          name='upload_date'
+          type='hidden'
+          value="aujourd\'hui"
+          ref={register({})}
+        />
 
         <SubmitButtonStyled type='submit'>Submit</SubmitButtonStyled>
       </FormStyled>

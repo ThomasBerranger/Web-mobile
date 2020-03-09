@@ -15,6 +15,16 @@ const articles = data['articles']
 
 const Article = () => {
   const articleId = useParams()
+  let localArticles = []
+  const localArticlesNumber = Object.keys(localStorage).length
+  {
+    for (var i = 0; i < localArticlesNumber; i++) {
+      const article = JSON.parse(localStorage.getItem(i))
+      localArticles.push(article)
+      console.log(article.id)
+      console.log(article.name)
+    }
+  }
   return (
     <div>
       <Header></Header>
@@ -37,6 +47,27 @@ const Article = () => {
               <DescriptionStyled>{article.category}</DescriptionStyled>
               <DescriptionStyled>{article.location}</DescriptionStyled>
               <DescriptionStyled>{article.upload_date}</DescriptionStyled>
+            </InformartionStyled>
+          </ArticleStyled>
+        ))}
+        {localArticles.map(article => (
+          <ArticleStyled key={article ? article.id : null}>
+            <ImageStyled src={article ? article.image_url : ''}></ImageStyled>
+            <InformartionStyled>
+              <LikeStyled>
+                <FontAwesomeIcon icon={faHeart} />
+              </LikeStyled>
+              <TitleStyled>{article ? article.name : null}</TitleStyled>
+              <PriceStyled>{article ? article.price : null} €</PriceStyled>
+              <DescriptionStyled>
+                {article ? article.category : null}
+              </DescriptionStyled>
+              <DescriptionStyled>
+                {article ? article.location : null}
+              </DescriptionStyled>
+              <DescriptionStyled>
+                {article ? article.upload_date : null}
+              </DescriptionStyled>
             </InformartionStyled>
           </ArticleStyled>
         ))}
