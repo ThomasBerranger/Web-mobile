@@ -21,8 +21,6 @@ const Article = () => {
     for (var i = 0; i < localArticlesNumber; i++) {
       const article = JSON.parse(localStorage.getItem(i))
       localArticles.push(article)
-      console.log(article.id)
-      console.log(article.name)
     }
   }
   return (
